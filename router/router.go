@@ -19,6 +19,7 @@ func SetupRouter(conf util.APPConfig) *echo.Echo {
 
 	// registry all endpoint
 	listApi := ListApi{
+		test_tahap_2.NewRegisterHandler(dbConn),
 		test_tahap_2.NewTopupHandler(dbConn),
 		test_tahap_2.NewLoginHandler(dbConn),
 		test_tahap_2.NewTopupHandler(dbConn),
