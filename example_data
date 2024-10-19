@@ -1,0 +1,72 @@
+-- public.payment definition
+
+-- Drop table
+
+-- DROP TABLE public.payment;
+
+CREATE TABLE public.payment (
+	payment_id varchar NOT NULL,
+	amount int4 NULL,
+	balance_before int4 NULL,
+	balance_after int4 NULL,
+	created_date varchar NULL,
+	phone_number varchar NULL,
+	remarks varchar NULL,
+	CONSTRAINT payment_pk PRIMARY KEY (payment_id)
+);
+
+
+-- public.topup definition
+
+-- Drop table
+
+-- DROP TABLE public.topup;
+
+CREATE TABLE public.topup (
+	top_up_id varchar NOT NULL,
+	amount_top_up int4 NULL,
+	balance_before int4 NULL,
+	balance_after int4 NULL,
+	created_date varchar NULL,
+	phone_number varchar NULL,
+	CONSTRAINT topup_pk PRIMARY KEY (top_up_id)
+);
+
+
+-- public.transfer definition
+
+-- Drop table
+
+-- DROP TABLE public.transfer;
+
+CREATE TABLE public.transfer (
+	transfer_id varchar NOT NULL,
+	amount int4 NULL,
+	balance_before int4 NULL,
+	balance_after int4 NULL,
+	target_user varchar NULL,
+	remarks varchar NULL,
+	created_date varchar NULL,
+	phone_number varchar NULL,
+	CONSTRAINT transfer_pk PRIMARY KEY (transfer_id)
+);
+
+
+-- public."user" definition
+
+-- Drop table
+
+-- DROP TABLE public."user";
+
+CREATE TABLE public."user" (
+	user_id varchar NOT NULL,
+	first_name varchar NULL,
+	last_name varchar NULL,
+	phone_number varchar NULL,
+	address varchar NULL,
+	pin varchar NULL,
+	created_date varchar NULL,
+	CONSTRAINT user_pk PRIMARY KEY (user_id),
+	CONSTRAINT user_un UNIQUE (phone_number)
+);
+
